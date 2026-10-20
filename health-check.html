@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#102b40">
+    <meta name="description" content="Pivot 碩士諮詢免費 SOP / CV 健檢。先用十題即時自評掌握準備進度，再申請由 AI 初步分析、顧問親自確認的完整文件健檢。">
+    <title>免費 SOP / CV 健檢｜Pivot 碩士諮詢</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/main.js" defer></script>
+    <script src="assets/health.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳至主要內容</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html#top" aria-label="Pivot 碩士諮詢，回到首頁">
+          <span class="wordmark">PIVOT<span class="brand-dot" aria-hidden="true"></span></span>
+          <span class="brand-description">碩士諮詢</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" hidden>
+          <span class="menu-icon" aria-hidden="true"></span>
+          <span class="menu-label">開啟選單</span>
+        </button>
+        <nav id="primary-nav" class="primary-nav" aria-label="主要導覽">
+          <a href="index.html#approach">為什麼是我們</a>
+          <a href="index.html#team">顧問介紹</a>
+          <a href="index.html#services">服務與定價</a>
+          <a href="index.html#faq">常見問題</a>
+          <a class="nav-cta" href="#application">免費健檢 <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="top" class="hero health-hero" aria-labelledby="hero-title">
+        <div class="container health-container">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> 免費 SOP / CV 健檢</p>
+          <h1 id="hero-title">免費文件健檢</h1>
+          <p class="hero-description">先做一次即時自評，再決定要不要送完整健檢。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#self-check">開始即時自評 <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="#application">直接申請完整健檢 <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="hero-note">不收學校佣金 <span aria-hidden="true">·</span> 不代寫文件 <span aria-hidden="true">·</span> 從你的目標出發</p>
+        </div>
+      </section>
+
+      <section id="self-check" class="section health-self-check" aria-labelledby="self-check-title">
+        <div class="container health-container">
+          <div class="section-heading">
+            <p class="eyebrow">01 / 先看清準備進度</p>
+            <h2 id="self-check-title">即時自評</h2>
+            <p id="self-check-help">勾選符合你目前狀況的敘述，每題 10 分，共 100 分。這份自評只在你的瀏覽器中計算，不會送出資料，也不代表錄取機率。</p>
+          </div>
+          <noscript><p class="health-notice">即時自評需要啟用 JavaScript；你仍可直接填寫下方的完整健檢申請表。</p></noscript>
+          <form id="self-check-form" aria-describedby="self-check-help">
+            <fieldset class="health-check-group">
+              <legend>故事敘事</legend>
+              <label class="health-check-item"><input type="checkbox" name="self_check" value="1"><span>我的 SOP 有一條清楚主線，能說明為什麼轉領域</span></label>
+              <label class="health-check-item"><input type="checkbox" name="self_check" value="2"><span>我能具體說出過去經驗如何連結到目標科系</span></label>
+              <label class="health-check-item"><input type="checkbox" name="self_check" value="3"><span>我知道目標科系真正想看的能力和特質</span></label>
+            </fieldset>
+            <fieldset class="health-check-group">
+              <legend>文件完整度</legend>
+              <label class="health-check-item"><input type="checkbox" name="self_check" value="4"><span>CV 用成果和數字呈現，而不是只列工作內容</span></label>
+              <label class="health-check-item"><input type="checkbox" name="self_check" value="5"><span>推薦人知道我的目標，也看過我的申請方向</span></label>
+              <label class="health-check-item"><input type="checkbox" name="self_check" value="6"><span>我的文件針對每間學校有調整，不是同一份投全部</span></label>
+            </fieldset>
+            <fieldset class="health-check-group">
+              <legend>準備與時程</legend>
+              <label class="health-check-item"><input type="checkbox" name="self_check" value="7"><span>我知道目標學校的截止日和我的送出時間表</span></label>
+              <label class="health-check-item"><input type="checkbox" name="self_check" value="8"><span>英文檢定成績已達標或有明確考試計畫</span></label>
+              <label class="health-check-item"><input type="checkbox" name="self_check" value="9"><span>我已研究過目標科系的課程內容</span></label>
+              <label class="health-check-item"><input type="checkbox" name="self_check" value="10"><span>畢業後的職涯方向，我能講出一個合理的版本</span></label>
+            </fieldset>
+            <button id="calculate-score" class="button button-primary" type="submit" disabled>計算我的分數 <span aria-hidden="true">↗</span></button>
+          </form>
+          <div id="score-result" class="health-score" role="status" aria-live="polite" aria-atomic="true">
+            <div id="score-content" hidden>
+              <p class="card-kicker">你的自評分數</p>
+              <p class="health-score-value"><strong id="score-value"></strong><span> / 100 分</span></p>
+              <h3 id="score-heading"></h3>
+              <p id="score-description"></p>
+            </div>
+          </div>
+          <p class="health-application-link"><a class="text-link" href="#application">申請完整 SOP / CV 健檢 <span aria-hidden="true">↗</span></a></p>
+        </div>
+      </section>
+
+      <section id="application" class="section health-application" aria-labelledby="application-title">
+        <div class="container health-container">
+          <div class="section-heading">
+            <p class="eyebrow">02 / 把你的故事交給我們看看</p>
+            <h2 id="application-title">完整健檢申請表</h2>
+            <p>填寫你的背景與申請方向，可上傳 SOP 或 CV，也可以貼上文件內容或連結。標示「必填」的欄位請務必填寫。</p>
+          </div>
+          <div id="submission-success" class="health-notice" role="status" hidden>收到！我們會先做 AI 初步分析，再由顧問親自回覆你。</div>
+          <form class="health-form" action="https://formsubmit.co/dannyyaou@gmail.com" method="POST" enctype="multipart/form-data" aria-describedby="health-privacy">
+            <input type="hidden" name="_subject" value="Pivot 免費健檢申請">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="health-check.html?sent=1">
+            <div class="health-form-grid">
+              <div class="health-field">
+                <label for="name">姓名 <span class="health-required">（必填）</span></label>
+                <input id="name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="health-field">
+                <label for="email">Email <span class="health-required">（必填）</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="health-field health-field-wide">
+                <label for="background">目前背景 — 學校/科系或目前工作 <span class="health-required">（必填）</span></label>
+                <input id="background" name="background" type="text" required>
+              </div>
+              <div class="health-field health-field-wide">
+                <label for="target">目標學校與科系</label>
+                <input id="target" name="target" type="text">
+              </div>
+              <div class="health-field">
+                <label for="entry-year">預計入學年份</label>
+                <select id="entry-year" name="entry_year">
+                  <option value="2027">2027</option>
+                  <option value="2028">2028</option>
+                  <option value="還在考慮">還在考慮</option>
+                </select>
+              </div>
+              <div class="health-field">
+                <label for="pivot-field">想轉往的領域</label>
+                <input id="pivot-field" name="pivot_field" type="text">
+              </div>
+              <div class="health-field health-field-wide">
+                <label for="attachment">上傳 SOP 或 CV <span class="health-required">（選填）</span></label>
+                <input id="attachment" name="attachment" type="file" aria-describedby="attachment-help">
+                <p id="attachment-help" class="health-field-help">可先移除文件中的身分證字號、住址等不必要的個人資料，再上傳。</p>
+              </div>
+              <div class="health-field health-field-wide">
+                <label for="document-text">或貼上文件內容/連結 <span class="health-required">（選填）</span></label>
+                <textarea id="document-text" name="document_text" rows="7"></textarea>
+              </div>
+              <div class="health-field health-field-wide">
+                <label for="notes">其他想告訴我們的事 <span class="health-required">（選填）</span></label>
+                <textarea id="notes" name="notes" rows="4"></textarea>
+              </div>
+            </div>
+            <p id="health-privacy" class="health-privacy">資料只用於本次健檢回覆，不會用於其他用途。我們提供指導與修改，不代寫文件。</p>
+            <button class="button button-primary" type="submit">送出免費健檢申請 <span aria-hidden="true">↗</span></button>
+          </form>
+        </div>
+      </section>
+
+      <section class="section health-details" aria-labelledby="health-details-title">
+        <div class="container health-container">
+          <p class="eyebrow">03 / 免費背後的做法</p>
+          <h2 id="health-details-title">健檢包含什麼</h2>
+          <p>每份申請我們會先進行 AI 初步分析（敘事主線、科系連結、文件完整度），再由 Danny 或 Olivia 人工確認後回覆，這就是為什麼我們能免費提供。</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner"><a class="brand footer-brand" href="index.html#top" aria-label="Pivot 碩士諮詢，回到首頁"><span class="wordmark">PIVOT<span class="brand-dot" aria-hidden="true"></span></span><span class="brand-description">碩士諮詢</span></a><p>Pivot 碩士諮詢 · 英國碩士轉領域申請 · 由英國註冊公司營運</p><a class="back-top" href="#top">回到頂端 <span aria-hidden="true">↑</span></a></div>
+    </footer>
+  </body>
+</html>
