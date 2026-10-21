@@ -37,19 +37,66 @@
         <div class="container health-container">
           <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> 免費 SOP / CV 健檢</p>
           <h1 id="hero-title">免費文件健檢</h1>
-          <p class="hero-description">先做一次即時自評，再決定要不要送完整健檢。</p>
+          <p class="hero-description">上傳你的 SOP，AI 立即給你初步建議；想看得更深入，再申請由顧問親自確認的完整健檢。</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#self-check">開始即時自評 <span aria-hidden="true">↓</span></a>
-            <a class="text-link" href="#application">直接申請完整健檢 <span aria-hidden="true">↗</span></a>
+            <a class="button button-primary" href="#ai-check">上傳 SOP 做 AI 健檢 <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="#self-check">先做 3 分鐘即時自評 <span aria-hidden="true">↗</span></a>
           </div>
           <p class="hero-note">不收學校佣金 <span aria-hidden="true">·</span> 不代寫文件 <span aria-hidden="true">·</span> 從你的目標出發</p>
+        </div>
+      </section>
+
+      <section id="ai-check" class="section health-ai-check" aria-labelledby="ai-check-title">
+        <div class="container health-container">
+          <div class="section-heading">
+            <p class="eyebrow">01 / 上傳文件，AI 立即分析</p>
+            <h2 id="ai-check-title">AI SOP 健檢</h2>
+            <p>上傳你的 Personal Statement（SOP），AI 會從主線敘事、科系連結、具體證據、結構、英文表達五個面向給出分數與修改建議。這是初步健檢 — 想得到顧問逐句確認的版本，請接著申請下方的完整健檢。</p>
+          </div>
+          <form id="ai-check-form" class="ai-check-form" novalidate>
+            <div class="form-grid">
+              <label>目標學校（選填）<input id="ai-school" type="text" maxlength="120" placeholder="例如 King's College London" autocomplete="off"></label>
+              <label>目標科系（選填）<input id="ai-programme" type="text" maxlength="120" placeholder="例如 MSc Computing" autocomplete="off"></label>
+            </div>
+            <div class="ai-mode-tabs" role="tablist" aria-label="輸入方式">
+              <button type="button" class="ai-mode-tab is-active" data-mode="file" role="tab" aria-selected="true">上傳檔案</button>
+              <button type="button" class="ai-mode-tab" data-mode="paste" role="tab" aria-selected="false">貼上文字</button>
+            </div>
+            <div id="ai-file-panel" class="ai-panel">
+              <label class="ai-drop" for="ai-file">
+                <strong>選擇 SOP 檔案</strong>
+                <span>PDF、DOCX 或 TXT，上限 2MB</span>
+              </label>
+              <input id="ai-file" type="file" accept=".pdf,.docx,.txt,application/pdf,text/plain,application/vnd.openxmlformats-officedocument.wordprocessingml.document" hidden>
+              <p id="ai-file-name" class="ai-file-name" aria-live="polite">尚未選擇檔案</p>
+            </div>
+            <div id="ai-paste-panel" class="ai-panel" hidden>
+              <label class="ai-paste-label">把 SOP 全文貼在這裡
+                <textarea id="ai-text" rows="10" maxlength="20000" placeholder="貼上你的 Personal Statement 全文（至少約 200 字）……"></textarea>
+              </label>
+            </div>
+            <button id="ai-submit" class="button button-primary" type="submit">開始 AI 健檢 <span aria-hidden="true">→</span></button>
+            <p class="ai-note">文件只會傳送給 AI 進行這一次評估，Pivot 不儲存你的文件。分析約需 10–30 秒；每人每天可使用 3 次。</p>
+            <p id="ai-status" class="ai-status" role="status" aria-live="polite"></p>
+          </form>
+          <div id="ai-result" class="ai-result" hidden>
+            <h3>健檢結果</h3>
+            <p id="ai-overall" class="ai-overall"></p>
+            <div id="ai-scores" class="ai-scores"></div>
+            <div id="ai-priorities-wrap">
+              <h4>最優先修改的三件事</h4>
+              <ol id="ai-priorities"></ol>
+            </div>
+            <p id="ai-truncated" class="ai-note" hidden>（文件較長，本次只分析了前 6,000 字。）</p>
+            <p class="ai-note">這是 AI 的初步評估，不能替代顧問的逐句健檢，也無法預測錄取結果。想要完整版本，歡迎申請下方的人工完整健檢。</p>
+          </div>
         </div>
       </section>
 
       <section id="self-check" class="section health-self-check" aria-labelledby="self-check-title">
         <div class="container health-container">
           <div class="section-heading">
-            <p class="eyebrow">01 / 先看清準備進度</p>
+            <p class="eyebrow">02 / 先看清準備進度</p>
             <h2 id="self-check-title">即時自評</h2>
             <p id="self-check-help">勾選符合你目前狀況的敘述，每題 10 分，共 100 分。這份自評只在你的瀏覽器中計算，不會送出資料，也不代表錄取機率。</p>
           </div>
@@ -91,7 +138,7 @@
       <section id="application" class="section health-application" aria-labelledby="application-title">
         <div class="container health-container">
           <div class="section-heading">
-            <p class="eyebrow">02 / 把你的故事交給我們看看</p>
+            <p class="eyebrow">03 / 把你的故事交給我們看看</p>
             <h2 id="application-title">完整健檢申請表</h2>
             <p>填寫你的背景與申請方向，可上傳 SOP 或 CV，也可以貼上文件內容或連結。標示「必填」的欄位請務必填寫。</p>
           </div>
@@ -99,7 +146,7 @@
           <form class="health-form" action="https://formsubmit.co/dannyyaou@gmail.com" method="POST" enctype="multipart/form-data" aria-describedby="health-privacy">
             <input type="hidden" name="_subject" value="Pivot 免費健檢申請">
             <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="health-check.html?sent=1">
+            <input type="hidden" name="_next" value="https://dannyyaou.github.io/pivot/health-check.html?sent=1">
             <div class="health-form-grid">
               <div class="health-field">
                 <label for="name">姓名 <span class="health-required">（必填）</span></label>
@@ -151,7 +198,7 @@
 
       <section class="section health-details" aria-labelledby="health-details-title">
         <div class="container health-container">
-          <p class="eyebrow">03 / 免費背後的做法</p>
+          <p class="eyebrow">04 / 免費背後的做法</p>
           <h2 id="health-details-title">健檢包含什麼</h2>
           <p>每份申請我們會先進行 AI 初步分析（敘事主線、科系連結、文件完整度），再由 Danny 或 Olivia 人工確認後回覆，這就是為什麼我們能免費提供。</p>
         </div>
