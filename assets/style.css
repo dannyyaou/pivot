@@ -432,3 +432,31 @@ details[open] summary { color: var(--teal); }
 /* school logos in profile paths */
 .school-logo { height: 17px; width: auto; vertical-align: -3px; margin-right: 7px; }
 .school-logo-seal { height: 20px; vertical-align: -5px; }
+
+/* AI SOP check */
+.health-ai-check { background: var(--paper); }
+.ai-check-form { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
+.ai-mode-tabs { display: flex; gap: 8px; margin: 18px 0 14px; }
+.ai-mode-tab { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 8px 18px; font: inherit; font-weight: 600; cursor: pointer; }
+.ai-mode-tab.is-active { background: var(--ink); color: #fff; border-color: var(--ink); }
+.ai-drop { display: flex; flex-direction: column; gap: 4px; align-items: center; text-align: center; border: 1.5px dashed var(--line); border-radius: var(--radius); padding: 34px 20px; cursor: pointer; }
+.ai-drop:hover { border-color: var(--teal); }
+.ai-drop strong { font-size: 1.05rem; }
+.ai-drop span { color: var(--muted); font-size: .9rem; }
+.ai-file-name { margin: 10px 0 0; color: var(--muted); font-size: .92rem; }
+.ai-paste-label { display: block; font-weight: 600; }
+.ai-paste-label textarea { width: 100%; margin-top: 8px; font: inherit; font-weight: 400; padding: 12px; border: 1px solid var(--line); border-radius: var(--radius); }
+#ai-submit { margin-top: 20px; }
+#ai-submit:disabled { opacity: .55; cursor: wait; }
+.ai-note { color: var(--muted); font-size: .88rem; margin-top: 12px; }
+.ai-status { margin-top: 10px; font-weight: 600; color: var(--teal); }
+.ai-result { margin-top: 28px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
+.ai-overall { font-size: 1.02rem; line-height: 1.75; }
+.ai-scores { display: grid; gap: 14px; margin-top: 16px; }
+.ai-score-row { border-top: 1px solid var(--line); padding-top: 12px; }
+.ai-score-head { display: flex; justify-content: space-between; align-items: baseline; }
+.ai-score-label { font-weight: 700; }
+.ai-score-dots { color: var(--teal); letter-spacing: 2px; }
+.ai-score-comment { margin: 4px 0 0; color: var(--muted); }
+#ai-priorities-wrap { margin-top: 18px; }
+#ai-priorities li { margin-bottom: 6px; }
